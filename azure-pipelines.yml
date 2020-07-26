@@ -18,10 +18,29 @@ steps:
   displayName: 'Current working directory'
 
 - script: |
-    echo current working folder 
+    set CurrentDir=%cd%
+    echo Current working directory is 
+    echo %var%
     echo BuildConfiguration is $(BuildConfiguration)
     echo system.defaultworkingdirectory is $(system.defaultworkingdirectory)
     echo build.artifactstagingdirectory is $(build.artifactstagingdirectory)
+    echo Build.SourcesDirectory: $(Build.SourcesDirectory)
+    echo Build.StagingDirectory: $(Build.StagingDirectory)
+    echo Environment.Name: $(Environment.Name)
+    echo Build.BuildNumber: $(Build.BuildNumber)
+    echo Build.Repository.Uri: $(Build.Repository.Uri)
+    echo Build.SourceBranchName: $(Build.SourceBranchName)
+    echo Build.SourceVersion: $(Build.SourceVersion)
+
+
+SET CurrentDir=%cd%
+ECHO Current working directory is 
+ECHO %var%
+
+
+ECHO The current file path this bat file is executing in is the following:
+
+ECHO %CurrentDir%
 
 - script: ls
   displayName: 'Get the file'
