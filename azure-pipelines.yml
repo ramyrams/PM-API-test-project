@@ -31,3 +31,17 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/*.xml'
+
+
+- task: InvokeRESTAPI@1
+  inputs:
+    connectionType: 'connectedServiceName'
+    serviceConnection: 'Augusta Team Chennal'
+    method: 'POST'
+    body: |
+      {
+      "@context": "http://schema.org/extensions",
+      "@type": "MessageCard",
+      "Title": "Metric Alert",
+      "text":   "<p style='color:red;font-weight:bold'>Rams, UBFFIt service CPU utilization spikes to 90%</p>. [Read the report here](http://test.io)" }
+    waitForCompletion: 'false'
