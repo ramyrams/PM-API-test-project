@@ -22,3 +22,6 @@ steps:
     ArtifactName: 'API Test Scripts'
     publishLocation: 'Container'
   displayName: 'Publish application artifacts'
+
+- script: ls
+  displayName: 'Get the file'
