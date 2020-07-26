@@ -63,3 +63,5 @@ steps:
 - script: newman run Postman_API_TestProject.postman_collection.json -e AugustaCorp.postman_environment.json
   displayName: 'Run API Test'
 
+- script: ls
+  displayName: 'Get the file'
