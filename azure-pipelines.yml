@@ -29,7 +29,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'APITestingFiles'
+    PathtoPublish: $(Build.ArtifactStagingDirectory)
     ArtifactName: 'API Test Scripts'
     publishLocation: 'Container'
   displayName: 'Publish application artifacts'
