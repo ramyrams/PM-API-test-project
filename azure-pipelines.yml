@@ -9,9 +9,16 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+
+
+- script: |
+    echo $(BuildConfiguration)
+    echo $(system.defaultworkingdirectory)
+    echo $(build.artifactstagingdirectory)
 
 - script: ls
   displayName: 'Get the file'
