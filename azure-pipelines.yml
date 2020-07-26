@@ -9,11 +9,11 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-vername: $(date:yyyy).$(Month)$(rev:.r)
+name: $(date:yyyy).$(Month)$(rev:.r)
 
 steps:
 
-- script: echo $(vername)
+- script: echo $(name)
   displayName: 'Install Newman and reporter'
 
 - task: NodeTool@0
