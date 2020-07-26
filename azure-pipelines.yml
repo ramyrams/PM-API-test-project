@@ -32,7 +32,6 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/*.xml'
 
-
 - task: InvokeRESTAPI@1
   inputs:
     connectionType: 'connectedServiceName'
