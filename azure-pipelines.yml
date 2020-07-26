@@ -16,9 +16,9 @@ steps:
 
 
 - script: |
-    echo $(BuildConfiguration)
-    echo $(system.defaultworkingdirectory)
-    echo $(build.artifactstagingdirectory)
+    echo BuildConfiguration is $(BuildConfiguration)
+    echo system.defaultworkingdirectory is $(system.defaultworkingdirectory)
+    echo build.artifactstagingdirectory is $(build.artifactstagingdirectory)
 
 - script: ls
   displayName: 'Get the file'
