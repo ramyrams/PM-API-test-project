@@ -9,39 +9,12 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: pwd
-  displayName: 'Current working directory'
-
-- script: |
-    set CurrentDir=%cd%
-    echo Current working directory is 
-    echo %var%
-    echo BuildConfiguration is $(BuildConfiguration)
-    echo system.defaultworkingdirectory is $(system.defaultworkingdirectory)
-    echo build.artifactstagingdirectory is $(build.artifactstagingdirectory)
-    echo Build.SourcesDirectory: $(Build.SourcesDirectory)
-    echo Build.StagingDirectory: $(Build.StagingDirectory)
-    echo Environment.Name: $(Environment.Name)
-    echo Build.BuildNumber: $(Build.BuildNumber)
-    echo Build.Repository.Uri: $(Build.Repository.Uri)
-    echo Build.SourceBranchName: $(Build.SourceBranchName)
-    echo Build.SourceVersion: $(Build.SourceVersion)
-
-- script: ls
-  displayName: 'Get the file'
-  
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node'
-
-- script: npm install
-  displayName: 'Install application dependencies' 
 
 - script: npm install -g newman-reporter-junitfull
   displayName: 'Install Newman and reporter'
@@ -49,23 +22,8 @@ steps:
 - script: echo $(Build.ArtifactStagingDirectory)
   displayName: 'Print Build Artifact Stating Directory'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: $(Build.ArtifactStagingDirectory)
-    ArtifactName: 'API Test Scripts'
-    publishLocation: 'Container'
-  displayName: 'Publish application artifacts'
-
-- script: ls
-  displayName: 'Get the file'
-
-
 - script: newman run Postman_API_TestProject.postman_collection.json -e AugustaCorp.postman_environment.json -r cli,junitfull --reporter-junitfull-export JUnitReport.xml
   displayName: 'Run API Test'
-
-- script: ls
-  displayName: 'Get the file'
-
 
 - task: PublishTestResults@2
   displayName: 'Publish Unit Test Results' 
