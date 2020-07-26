@@ -65,3 +65,11 @@ steps:
 
 - script: ls
   displayName: 'Get the file'
+
+
+- task: PublishTestResults@2
+  displayName: 'Publish Unit Test Results' 
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/*.xml'
