@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "89118b08-bd41-452a-b889-4bc33e5235fe",
+		"name": "Postman_API_TestProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Validate AH Home Page Landing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "76712700-8037-41ba-b026-4a75ff543674",
+						"exec": [
+							"pm.test(\"Validate Augsuta.com up and running\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const $ = cheerio.load(responseBody);\r",
+							"pm.test(\"Validate the title of the page\", function () {\r",
+							"    var pageTitle = $('title').text();\r",
+							"\r",
+							"    pm.expect(pageTitle).to.be.equal(\"Augusta HiTech - Blockchain | Product Development | Artificial Intelligence\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}",
+					"host": [
+						"{{BaseURL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
