@@ -60,7 +60,7 @@ steps:
   displayName: 'Get the file'
 
 
-- script: newman run Postman_API_TestProject.postman_collection.json -e AugustaCorp.postman_environment.json
+- script: newman run Postman_API_TestProject.postman_collection.json -e AugustaCorp.postman_environment.json -r cli,junitfull --reporter-junitfull-export JUnitReport.xml
   displayName: 'Run API Test'
 
 - script: ls
