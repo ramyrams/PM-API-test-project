@@ -13,6 +13,9 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- script: ls
+  displayName: 'Get the file'
+  
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
