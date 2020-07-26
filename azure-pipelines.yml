@@ -13,6 +13,14 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node'
+
+- script: npm install
+  displayName: 'Install application dependencies' 
+
 - script: npm install -g newman-reporter-junitfull
   displayName: 'Install Newman and reporter'
 
