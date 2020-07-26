@@ -24,6 +24,9 @@ steps:
 - script: npm install -g newman-reporter-junitfull
   displayName: 'Install Newman and reporter'
 
+- script: echo $(Build.ArtifactStagingDirectory)
+  displayName: 'Print Build Artifact Stating Directory'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'APITestingFiles'
