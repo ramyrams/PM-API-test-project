@@ -46,7 +46,7 @@ steps:
       {
       "@context": "http://schema.org/extensions",
       "@type": "MessageCard",
-      "Title": "Metric Alert",
+      "Title": "API Deployed",
       "text":   "<p style='color:red;font-weight:bold'>Rams, UBFFIt service CPU utilization spikes to 90%</p>. [Read the report here](http://test.io)" }
     contentType: 'application/json'
     allowInvalidSSLCertificate: false
