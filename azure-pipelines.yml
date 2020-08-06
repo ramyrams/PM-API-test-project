@@ -47,6 +47,6 @@ steps:
       "@context": "http://schema.org/extensions",
       "@type": "MessageCard",
       "Title": "API Deployed",
-      "text":   "<p style='color:red;font-weight:bold'>Tamil, Prism API is deployed in QA Environment</p>. [Read the report here](http://test.io)" }
+      "text":   "<p style='color:red;font-weight:bold'>Tamil, Prism API is deployed in QA Environment</p>. [Read the report here](https://dev.azure.com/RamsInc/PMAPITestProject/_build/results?buildId=99&view=ms.vss-test-web.build-test-results-tab)" }
     contentType: 'application/json'
     allowInvalidSSLCertificate: false
